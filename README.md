@@ -25,3 +25,7 @@
 ```
     vue create vue-todo
 ```
+
+## 만들게 될 TODO APP
+
+![구조](https://user-images.githubusercontent.com/56942649/83947602-fafeab00-a852-11ea-839a-e77581b91c8d.png)
