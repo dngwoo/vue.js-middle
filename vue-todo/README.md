@@ -1,24 +1,5 @@
 # vue-todo
 
-## Project setup
-```
-yarn install
-```
+## 배우게 될 것
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [x] 컴포넌트 생성 및 등록하기

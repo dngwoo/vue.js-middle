@@ -17,7 +17,7 @@
 - [x] git (git checkout branchname 사용)
 - [x] github
 - [x] tslint
-- [x] vetur
+- [x] vetur (.vue파일에서 vue를 치면 구조를 알아서 잡아주는 vsc 플러그인)
 - [x] @vue/cli
 
 ## vue-cli를 이용하여 프로젝트 생성
