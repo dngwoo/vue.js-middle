@@ -22,3 +22,7 @@
 2. 할 일 추가 기능
 
 - [x] TodoInput.vue에서 데이터 관리하는 부분 App.uve로 이동. emit으로 이벤트를 발생시켜서 App.vue에서 함수를 실행시킴. newTodoItem를 v-model을 이용해서 input과 연결 시킨 후 그 데이터를 \$emit을 이용해서 같이 보낸다.
+
+3. 할 일 완료 가능
+
+- [x] TodoList의 removeTodo함수에서 \$emit을 이용하여 이벤트와 todoItem, index를 인자로 보내고 App.vue의 removeOneItem 함수에서 받아서 실행시킨다.
