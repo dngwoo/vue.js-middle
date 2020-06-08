@@ -24,11 +24,11 @@ export default {
 </script>
 
 <style>
+/* @import "./css/reset.css"; */
 body {
   text-align: center;
   background: #f6f6f6;
 }
-
 input {
   border-style: groove;
   width: 200px;
@@ -36,7 +36,6 @@ input {
 button {
   border-style: groove;
 }
-
 .shadow {
   box-shadow: 5px 10px 10px rgb(0, 0, 0, 0.3);
 }

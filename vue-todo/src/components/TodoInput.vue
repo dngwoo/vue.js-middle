@@ -17,9 +17,13 @@ export default {
   },
   methods: {
     addTodo: function() {
-      // 저장하는 로직
-      localStorage.setItem(this.newTodoItem, this.newTodoItem);
-      this.clearInput();
+      // input 값이 있을 때만 실행
+      if (this.newTodoItem !== "") {
+        // 저장하는 로직
+        var obj = { completed: false, item: this.newTodoItem };
+        localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+        this.clearInput();
+      }
     },
     clearInput: function() {
       // input 값 초기화
@@ -53,5 +57,10 @@ input:focus {
 .addBtn {
   color: white;
   vertical-align: middle;
+  cursor: pointer;
+}
+.addBtn:active {
+  transform: scale(0.9);
 }
 </style>
+
