@@ -23,6 +23,20 @@
 
 - [x] TodoInput.vue에서 데이터 관리하는 부분 App.uve로 이동. emit으로 이벤트를 발생시켜서 App.vue에서 함수를 실행시킴. newTodoItem를 v-model을 이용해서 input과 연결 시킨 후 그 데이터를 \$emit을 이용해서 같이 보낸다.
 
-3. 할 일 완료 가능
+3. 할 일 삭제 가능
 
-- [x] TodoList의 removeTodo함수에서 \$emit을 이용하여 이벤트와 todoItem, index를 인자로 보내고 App.vue의 removeOneItem 함수에서 받아서 실행시킨다.
+- [x] TodoList의 removeTodo함수에서 \$emit을 이용하여 이벤트와 todoItem, index를 인자로 보내고 App.vue의 removeOneItem 함수에서 받아서 실행한다.
+
+4. 할 일 완료 기능
+
+- [x] TodoList의 toggleComplete 함수에서 \$emit을 이용하여 이벤트와 todoItem, index를 인자로 보내고 App.vue의 toggleOneItem 함수에서 받아서 실행한다.
+- [x] 안티패턴(비효율적인 패턴)을 조심하자. 상위 컴포넌트에서 하위 컴포넌트로 준 데이터를 바꾸지말라는 뜻이다. 데이터는 Container 컴포넌트에서 바꾸는것이 좋다.
+
+```javascript
+    toggleOneItem: function(todoItem, index) {
+      // todoItem.completed = !todoItem.completed; <- 이렇게 사용하지 말자
+      this.todoItems[index].completed = !this.todoItems[index].completed;
+      localStorage.removeItem(todoItem.item);
+      localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
+    }
+```
