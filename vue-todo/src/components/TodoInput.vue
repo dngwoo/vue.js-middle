@@ -12,7 +12,7 @@
 export default {
   data: function() {
     return {
-      newTodoItem: ""
+      newTodoItem: "" // input value 값을 받아온다.
     };
   },
   methods: {
@@ -20,8 +20,7 @@ export default {
       // input 값이 있을 때만 실행
       if (this.newTodoItem !== "") {
         // 저장하는 로직
-        var obj = { completed: false, item: this.newTodoItem };
-        localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+        this.$emit("addTodo", this.newTodoItem); // 이벤트 보내기
         this.clearInput();
       }
     },

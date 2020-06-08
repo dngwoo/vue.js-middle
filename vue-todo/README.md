@@ -18,3 +18,7 @@
 
 - [x] 이것을 위해 App.vue에 TodoList.vue의 data와 created(라이프싸이클 속성)을 가져온다.
 - [x] TodoListe.vue의 todoItems를 propsdata로 변경해준다.
+
+2. 할 일 추가 기능
+
+- [x] TodoInput.vue에서 데이터 관리하는 부분 App.uve로 이동. emit으로 이벤트를 발생시켜서 App.vue에서 함수를 실행시킴. newTodoItem를 v-model을 이용해서 input과 연결 시킨 후 그 데이터를 \$emit을 이용해서 같이 보낸다.
