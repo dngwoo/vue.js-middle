@@ -44,3 +44,7 @@
 5. 할 일 모두 삭제 기능
 
 - [x] TodoFooter의 clearTodo 함수에서 \$emit을 이용하여 이벤트를 보낸다. App.vue에서 이벤트를 받으면 clearAllItems을 실행시킨다. 목록을 지워줘야 되기 때문에 this.todoItems = []로 초기화 해준다.
+
+## 사용자 경험 개선
+
+- [x] 모달 컴포넌트 등록
