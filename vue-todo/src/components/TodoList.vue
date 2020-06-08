@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="(todoItem, index) in todoItems" v-bind:key="index" class="shadow">
+      <li v-for="(todoItem, index) in propsdata" v-bind:key="index" class="shadow">
         <i
           class="checkBtn fas fa-check"
           v-bind:class="{checkBtnCompleted: todoItem.completed}"
@@ -16,39 +16,16 @@
 
 <script>
 export default {
-  data: function() {
-    return {
-      todoItems: []
-    };
-  },
+  props: ["propsdata"],
   methods: {
     removeTodo: function(todoItem, index) {
-      // console.log(todoItem, index);
       localStorage.removeItem(todoItem.item);
-      this.todoItems.splice(index, 1); // 해당 인덱스에서 한개 요소 제거
+      this.todoItems.splice(index, 1);
     },
     toggleComplete: function(todoItem) {
       todoItem.completed = !todoItem.completed;
-      // 로컬 스토리지 데이터 갱신
       localStorage.removeItem(todoItem.item);
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
-    }
-  },
-  created: function() {
-    // 인스턴스가 생성되자 말자 호출되는 라이프싸이클 훅임.
-    // 훅이란 생성되는 시점에 이 안에 로직이 실행되는 것임.
-    if (localStorage.length > 0) {
-      for (var i = 0; i < localStorage.length; i++) {
-        if (localStorage.key(i) !== "loglevel:webpack-dev-server") {
-          // console.log(localStorage.key(i));
-          // this.todoItems.push(localStorage.key(i));
-
-          // console.log(typeof localStorage.getItem(localStorage.key(i))) <- string
-          this.todoItems.push(
-            JSON.parse(localStorage.getItem(localStorage.key(i))) // <- 다시 object로 변경
-          );
-        }
-      }
     }
   }
 };

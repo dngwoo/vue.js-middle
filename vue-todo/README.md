@@ -10,3 +10,11 @@
 - [x] TodoList.vue 할 일 목록 표시 (v-for, localStorage.key(i))
 - [x] TodoList.vue 할 일 목록 삭제 기능 (localStorage.removeItem(key), todoItems.splice(index,1))
 - [x] TodoList.vue, TodoInput.vue 할 일 완료 기능 구현 (v-for, v-bind, v-on, JSON.parse(), JSON.stringify())
+- [x] TodoFooter.vue 구현(localStorage.clear())
+
+## 리팩토링
+
+1. 데이터 관리를 Container 컴포넌트에서 해줘야 한다. Container 컴포넌트는 동작,데이터 조작하는 컴포넌트이다. TodoInput, TodoList, TodoFooter을 단지 화면을 구성하는 Presenter 컴포넌트라고 한다.
+
+- [x] 이것을 위해 App.vue에 TodoList.vue의 data와 created(라이프싸이클 속성)을 가져온다.
+- [x] TodoListe.vue의 todoItems를 propsdata로 변경해준다.
