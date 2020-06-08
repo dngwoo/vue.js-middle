@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="inputBox shadow">
     <!-- v-model을 사용하여 input과 data값을 동적으로 매핑 -->
-    <input type="text" v-model="newTodoItem" />
-    <button v-on:click="addTodo">add</button>
+    <input type="text" v-model="newTodoItem" @keyup.enter="addTodo" />
+    <span class="addContainer" @click="addTodo">
+      <i class="fas fa-plus addBtn"></i>
+    </span>
   </div>
 </template>
 
@@ -17,11 +19,39 @@ export default {
     addTodo: function() {
       // 저장하는 로직
       localStorage.setItem(this.newTodoItem, this.newTodoItem);
+      this.clearInput();
+    },
+    clearInput: function() {
+      // input 값 초기화
       this.newTodoItem = "";
     }
   }
 };
 </script>
 
-<style>
+<style scoped>
+input:focus {
+  outline: none;
+}
+.inputBox {
+  background: white;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 5px;
+}
+.inputBox input {
+  border-style: none;
+  font-weight: 0.9rem;
+}
+.addContainer {
+  float: right;
+  background: linear-gradient(to right, #6478f8, #8763f8);
+  display: block;
+  width: 3rem;
+  border-radius: 0 5px 5px 0;
+}
+.addBtn {
+  color: white;
+  vertical-align: middle;
+}
 </style>
