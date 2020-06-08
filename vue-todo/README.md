@@ -9,3 +9,4 @@
 - [x] TodoInput.vue 코드 분할 및 UI 스타일링
 - [x] TodoList.vue 할 일 목록 표시 (v-for, localStorage.key(i))
 - [x] TodoList.vue 할 일 목록 삭제 기능 (localStorage.removeItem(key), todoItems.splice(index,1))
+- [x] TodoList.vue, TodoInput.vue 할 일 완료 기능 구현 (v-for, v-bind, v-on, JSON.parse(), JSON.stringify())
