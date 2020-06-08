@@ -1,7 +1,12 @@
 <template>
   <div>
     <ul>
-      <li v-for="todoItem in todoItems" v-bind:key="todoItem">{{todoItem}}</li>
+      <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem" class="shadow">
+        {{todoItem}}
+        <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
+          <i class="fas fa-trash-alt"></i>
+        </span>
+      </li>
     </ul>
   </div>
 </template>
@@ -12,6 +17,13 @@ export default {
     return {
       todoItems: []
     };
+  },
+  methods: {
+    removeTodo: function(todoItem, index) {
+      // console.log(todoItem, index);
+      localStorage.removeItem(todoItem);
+      this.todoItems.splice(index, 1); // 해당 인덱스에서 한개 요소 제거
+    }
   },
   created: function() {
     // 인스턴스가 생성되자 말자 호출되는 라이프싸이클 훅임.
@@ -29,6 +41,35 @@ export default {
 </script>
 
 <style>
+ul {
+  /* 점 없애는 것 */
+  list-style-type: none;
+  padding-left: 0px;
+  margin-top: 0;
+  text-align: left;
+}
+li {
+  display: flex;
+  mon-height: 50px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0.5rem 0;
+  padding: 0 0.9rem;
+  background: white;
+  border-radius: 5px;
+}
+.removeBtn {
+  margin-left: auto;
+  color: #dc4343;
+}
+.checkBtn {
+  line-height: 45px;
+  color: #62acde;
+  margin-right: 5px;
+}
+.checkBtnCompleted {
+  color: #b3adad;
+}
 </style>
 
 
