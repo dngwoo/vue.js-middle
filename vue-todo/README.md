@@ -87,3 +87,5 @@ i = 10;
 
 - [x] Arrow Function
 - [x] Enhanced Object Literals
+- [x] 속성명 축약 특징(객체의 속성명과 값명이 동일할 때 축약가능)
+- [x] 자바스크립트 모듈 시스템(import, export)
