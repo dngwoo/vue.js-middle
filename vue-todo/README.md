@@ -97,3 +97,4 @@ i = 10;
 - [x] Vuex가 필요한 이유 - 복잡한 어플리케이션에서 컴포넌트의 개수가 많아지면 컴포넌트간에 데이터 전달이 어려워지므로
 - [x] Vuex 컨셉 - State, View, Actions를 사용
 - [x] Vuex 설치 및 등록
+- [x] Vuex 기술 요소(state, getters)

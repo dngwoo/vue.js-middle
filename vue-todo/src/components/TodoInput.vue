@@ -12,7 +12,10 @@
       -->
       <h3 slot="header">
         경고!
-        <i class="fas fa-times closeModalBtn fa-2x" @click="showModal = false"></i>
+        <i
+          class="fas fa-times closeModalBtn fa-2x"
+          @click="showModal = false"
+        ></i>
       </h3>
       <div slot="body">무엇이라도 입력하세요</div>
     </Mdoal>
@@ -25,28 +28,27 @@ export default {
   data() {
     return {
       newTodoItem: "", // input value 값을 받아온다.
-      showModal: false
+      showModal: false,
     };
   },
   methods: {
     addTodo() {
-      // input 값이 있을 때만 실행
       if (this.newTodoItem !== "") {
-        // 저장하는 로직
-        this.$emit("addTodo", this.newTodoItem); // 이벤트 보내기
+        const text = this.newTodoItem.trim(); // 앞 뒤 공백제거
+        // this.$emit("addTodo", this.newTodoItem);
+        this.$store.commit("addOneItem", text);
         this.clearInput();
       } else {
         this.showModal = !this.showModal;
       }
     },
     clearInput() {
-      // input 값 초기화
       this.newTodoItem = "";
-    }
+    },
   },
   compononents: {
-    Modal
-  }
+    Modal,
+  },
 };
 </script>
 
@@ -84,4 +86,3 @@ input:focus {
   vertical-align: middle;
 }
 </style>
-
