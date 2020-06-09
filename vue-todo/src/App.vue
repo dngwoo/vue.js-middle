@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     addOneItem: function(newTodoItem) {
-      var obj = { completed: false, item: newTodoItem };
+      const obj = { completed: false, item: newTodoItem };
       localStorage.setItem(newTodoItem, JSON.stringify(obj));
       this.todoItems.push(obj);
     },
@@ -46,7 +46,7 @@ export default {
     // 인스턴스가 생성되자 말자 호출되는 라이프싸이클 훅임.
     // 훅이란 생성되는 시점에 이 안에 로직이 실행되는 것임.
     if (localStorage.length > 0) {
-      for (var i = 0; i < localStorage.length; i++) {
+      for (let i = 0; i < localStorage.length; i++) {
         if (localStorage.key(i) !== "loglevel:webpack-dev-server") {
           this.todoItems.push(
             JSON.parse(localStorage.getItem(localStorage.key(i)))

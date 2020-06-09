@@ -50,3 +50,34 @@
 - [x] 모달 컴포넌트 등록
 - [ ] slot을 이용한 모달 오버라이딩
 - [x] 내부 트랜지션 사용
+
+## ES6
+
+- [x] const, let
+
+```javascript
+let a = 20;
+let a = 10; // uncaught syntaxError <- 잡히지 않는 문법(문법 오류)
+//---------------------
+const a = {};
+a.num = 10;
+
+const b = [];
+b.push(10);
+```
+
+- [x] 변수 스코프와 호이스팅
+
+```javascript
+var sum = 5;
+sum = sum + i;
+function () {}
+var i = 10;
+// ---------------------- hoisting
+var sum;
+function (){}
+var i;
+sum 5;
+sum = sum + i;
+i = 10;
+```

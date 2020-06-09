@@ -70,10 +70,7 @@ li {
   text-decoration: line-through;
   color: #b3adad;
 }
-.list-item {
-  display: inline-block;
-  margin-right: 10px;
-}
+
 .list-enter-active,
 .list-leave-active {
   transition: all 1s;
