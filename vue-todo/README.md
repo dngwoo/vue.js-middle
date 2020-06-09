@@ -56,9 +56,12 @@
 - [x] const, let
 
 ```javascript
+// 재설정 불가
 let a = 20;
 let a = 10; // uncaught syntaxError <- 잡히지 않는 문법(문법 오류)
 //---------------------
+
+// 객체로 접근해서 내부 값을 바꾸는 경우는 가능
 const a = {};
 a.num = 10;
 
@@ -81,3 +84,6 @@ sum 5;
 sum = sum + i;
 i = 10;
 ```
+
+- [x] Arrow Function
+- [x] Enhanced Object Literals

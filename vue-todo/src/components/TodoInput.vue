@@ -22,14 +22,14 @@
 <script>
 import Modal from "./common/Modal.vue";
 export default {
-  data: function() {
+  data() {
     return {
       newTodoItem: "", // input value 값을 받아온다.
       showModal: false
     };
   },
   methods: {
-    addTodo: function() {
+    addTodo() {
       // input 값이 있을 때만 실행
       if (this.newTodoItem !== "") {
         // 저장하는 로직
@@ -39,7 +39,7 @@ export default {
         this.showModal = !this.showModal;
       }
     },
-    clearInput: function() {
+    clearInput() {
       // input 값 초기화
       this.newTodoItem = "";
     }

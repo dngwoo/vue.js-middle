@@ -16,33 +16,33 @@ import TodoList from "./components/TodoList.vue";
 import TodoFooter from "./components/TodoFooter.vue";
 
 export default {
-  data: function() {
+  data() {
     return {
       todoItems: []
     };
   },
   methods: {
-    addOneItem: function(newTodoItem) {
+    addOneItem(newTodoItem) {
       const obj = { completed: false, item: newTodoItem };
       localStorage.setItem(newTodoItem, JSON.stringify(obj));
       this.todoItems.push(obj);
     },
-    removeOneItem: function(todoItem, index) {
+    removeOneItem(todoItem, index) {
       localStorage.removeItem(todoItem.item);
       this.todoItems.splice(index, 1);
     },
-    toggleOneItem: function(todoItem, index) {
+    toggleOneItem(todoItem, index) {
       // todoItem.completed = !todoItem.completed;
       this.todoItems[index].completed = !this.todoItems[index].completed;
       localStorage.removeItem(todoItem.item);
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
     },
-    clearAllItems: function() {
+    clearAllItems() {
       localStorage.clear();
       this.todoItems = [];
     }
   },
-  created: function() {
+  created() {
     // 인스턴스가 생성되자 말자 호출되는 라이프싸이클 훅임.
     // 훅이란 생성되는 시점에 이 안에 로직이 실행되는 것임.
     if (localStorage.length > 0) {
