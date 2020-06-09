@@ -5,18 +5,22 @@
     <span class="addContainer" @click="addTodo">
       <i class="fas fa-plus addBtn"></i>
     </span>
-    <Modal v-if="showModal" @close="showModal = false">
+    <Mdoal v-if="showModal" @close="showModal = false">
       <!--
       you can use custom content here to overwrite
       default content
       -->
-      <h3 slot="header">custom header</h3>
-    </Modal>
+      <h3 slot="header">
+        경고!
+        <i class="fas fa-times closeModalBtn fa-2x" @click="showModal = false"></i>
+      </h3>
+      <div slot="body">무엇이라도 입력하세요</div>
+    </Mdoal>
   </div>
 </template>
 
 <script>
-import Modal from "../common/Modal.vue";
+import Modal from "./common/Modal.vue";
 export default {
   data: function() {
     return {
@@ -31,6 +35,8 @@ export default {
         // 저장하는 로직
         this.$emit("addTodo", this.newTodoItem); // 이벤트 보내기
         this.clearInput();
+      } else {
+        this.showModal = !this.showModal;
       }
     },
     clearInput: function() {
@@ -72,6 +78,10 @@ input:focus {
 }
 .addBtn:active {
   transform: scale(0.9);
+}
+.closeModalBtn {
+  color: #42b983;
+  vertical-align: middle;
 }
 </style>
 
