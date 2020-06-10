@@ -98,3 +98,4 @@ i = 10;
 - [x] Vuex 컨셉 - State, View, Actions를 사용
 - [x] Vuex 설치 및 등록
 - [x] Vuex 기술 요소(state, getters, mutations, actions)
+- [ ] Vuex Helper 함수 (mapGetters)
