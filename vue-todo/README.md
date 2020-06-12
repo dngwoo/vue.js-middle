@@ -98,4 +98,13 @@ i = 10;
 - [x] Vuex 컨셉 - State, View, Actions를 사용
 - [x] Vuex 설치 및 등록
 - [x] Vuex 기술 요소(state, getters, mutations, actions)
-- [ ] Vuex Helper 함수 (mapGetters)
+- [x] Vuex Helper 함수 (mapGetters, mapMutations, mapActions, mapState)
+
+## 프로젝트 구조화 및 모듈화
+
+- [x] 스토어 속성 모듈화 방법(import, export 이용)
+- [x] 스토어 모듈화 방법(modules 속성 이용)
+
+## 개선 할 점
+
+- [ ] TodoList 지울 때 순서
